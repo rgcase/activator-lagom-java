@@ -9,12 +9,12 @@ import static com.lightbend.lagom.javadsl.api.Service.pathCall;
 
 public interface WsService extends Service {
 
-    ServiceCall<NotUsed, String> ws(String id);
+    ServiceCall<NotUsed, String> ws(String name);
 
     @Override
     default Descriptor descriptor() {
         return named("wsservice").withCalls(
-                pathCall("/api/ws/:id",  this::ws)
+                pathCall("/api/ws/:name",  this::ws)
         ).withAutoAcl(true);
     }
 }
