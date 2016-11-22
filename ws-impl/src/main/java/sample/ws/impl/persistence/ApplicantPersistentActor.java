@@ -6,9 +6,6 @@ import akka.persistence.SnapshotOffer;
 import scala.PartialFunction;
 import scala.runtime.BoxedUnit;
 
-/**
- * Created by dave on 2016-11-18.
- */
 public class ApplicantPersistentActor extends AbstractPersistentActor {
     private int intState = 0;
     private ApplicationState state = new ApplicationState(null, null);
@@ -16,6 +13,7 @@ public class ApplicantPersistentActor extends AbstractPersistentActor {
 
     public ApplicantPersistentActor() {
 
+        System.out.println("&&&&& Booting ApplicantPersistentActor name: " +self().path().name() );
     }
 
     @Override

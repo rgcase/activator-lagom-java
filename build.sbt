@@ -4,6 +4,7 @@ organization in ThisBuild := "sample.helloworld"
 scalaVersion in ThisBuild := "2.11.8"
 
 
+lagomKafkaEnabled in ThisBuild := false
 
 lazy val wsApi = project("ws-api")
   .settings(
